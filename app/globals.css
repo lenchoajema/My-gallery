@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(246, 241, 231, 0.05) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-fraunces);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-brass;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 font-body text-sm font-medium
+      transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brass text-ink hover:bg-brass-bright;
+  }
+  .btn-secondary {
+    @apply btn bg-transparent text-paper border border-ink-light hover:border-brass hover:text-brass;
+  }
+  .btn-danger {
+    @apply btn bg-transparent text-rose border border-rose/40 hover:bg-rose hover:text-paper;
+  }
+
+  .field {
+    @apply w-full rounded-lg bg-ink-light/60 border border-ink-light px-4 py-2.5 text-paper
+      placeholder:text-ink-faint focus:outline-none focus:border-brass focus:ring-1 focus:ring-brass;
+  }
+  .label {
+    @apply block font-mono text-xs uppercase tracking-widest text-ink-faint mb-2;
+  }
+
+  .polaroid {
+    @apply bg-paper text-ink rounded-sm p-3 pb-10 shadow-card relative;
+  }
+
+  .tape {
+    @apply absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-paper2/80 shadow-tape;
+    clip-path: polygon(4% 0, 96% 0, 100% 100%, 0% 100%);
+  }
+}
